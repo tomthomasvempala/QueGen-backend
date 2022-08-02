@@ -4,10 +4,26 @@ const qbModel = require('../models/questionBank')
 
 
 router.get('/:code', async(req, resp) => {
-    console.log(req.params.code)
     const qb = await qbModel.findOne({ code: req.params.code });
     try {
         resp.json(qb);
+    } catch (error) {
+        resp.status(500).send(error);
+    }
+})
+
+router.put('/:code', async(req, resp) => {
+    const qb = await qbModel.findOne({ code: req.params.code });
+    try {
+
+        qb.questions.push({
+            que: req.body.que,
+            courseOutcomes: req.body.courseOutcomes,
+            marks: req.body.marks,
+            lastUse: null
+        })
+        await qb.save();
+        resp.send({})
     } catch (error) {
         resp.status(500).send(error);
     }
