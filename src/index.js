@@ -18,6 +18,7 @@ mongoose.connect(
 app.use('/teachers', require('./routes/teacher.routes'))
 app.use('/subjects', require('./routes/subjects.route'))
 app.use('/questionBank', require('./routes/questionBank.route'))
+app.use('/login', require('./routes/login.route'))
 
 
 app.listen(3001, () => { console.log('Server started at localhost:3001') });
