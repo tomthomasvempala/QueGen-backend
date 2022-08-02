@@ -1,12 +1,15 @@
 const mongoose = require('mongoose')
 
 const questionBankScheme = new mongoose.Schema({
-    code:{
-        type:String,
-        required:true,
-        trim:true
+    code: {
+        type: String,
+        required: true,
+        trim: true
     },
-    questions:{
-        type:Array
+    questions: {
+        type: Array
     }
 })
+
+
+module.exports = mongoose.model("questionBank", questionBankScheme);
