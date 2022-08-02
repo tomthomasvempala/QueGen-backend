@@ -83,7 +83,6 @@ router.post('/', async(req, resp) => {
     try {
 
         const teacher = await teacherModel.create({
-
                 name: req.body.name,
                 pwd: req.body.pwd,
                 dept: req.body.dept,

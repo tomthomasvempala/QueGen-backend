@@ -4,9 +4,9 @@ const teacherRoute = require('./routes/teacher.routes')
 const app = express();
 let teachers = require('./Database/users').teachers
 let subjects = require('./Database/subjects').subjects
-
+var cors = require('cors');
+app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded());
 
 
 mongoose.connect(
