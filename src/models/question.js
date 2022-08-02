@@ -11,7 +11,7 @@ const questionScheme = new mongoose.Schema({
         required: true
     },
     courseOutcome: {
-        type: Array
+        type: String
     },
     level: {
         type: Array
