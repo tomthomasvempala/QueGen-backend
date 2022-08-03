@@ -13,7 +13,7 @@ router.get('/', async(req, resp) => {
 })
 
 router.get('/:id', async(req, resp) => {
-    const subjects = await subjectModel.findOne({ id: req.params.id });
+    const subjects = await subjectModel.findOne({ code: req.params.id });
     try {
         resp.json(subjects);
     } catch (error) {
