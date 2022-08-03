@@ -20,5 +20,5 @@ app.use('/subjects', require('./routes/subjects.route'))
 app.use('/questionBank', require('./routes/questionBank.route'))
 app.use('/login', require('./routes/login.route'))
 
-
-app.listen(3001, () => { console.log('Server started at localhost:3001') });
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => { console.log('Server started at localhost: ' + PORT) });
