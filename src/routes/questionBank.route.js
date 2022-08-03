@@ -18,8 +18,8 @@ router.put('/:code', async(req, resp) => {
 
         qb.questions.push({
             que: req.body.que,
-            courseOutcomes: req.body.courseOutcomes,
-            marks: req.body.marks,
+            courseOutcome: req.body.courseOutcome,
+            mark: req.body.mark,
             lastUse: null
         })
         await qb.save();
